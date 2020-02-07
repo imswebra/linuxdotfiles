@@ -1,0 +1,13 @@
+#  Leave the below on lines 2/3 for the alias switching
+[line_break]
+disabled = false
+
+[character]
+use_symbol_for_status = false
+symbol = "❯"
+error_symbol = "✗"
+style_success = "bold green"
+style_failure = "bold red"
+
+[nodejs]
+symbol = " "

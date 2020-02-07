@@ -1,0 +1,5 @@
+{
+	"CtrlUp": "MoveLinesUp",
+	"CtrlDown": "MoveLinesDown",
+    "CtrlUnderscore": "comment.comment"
+}
