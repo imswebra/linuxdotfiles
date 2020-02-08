@@ -26,6 +26,42 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# ==============================================================================
+
+# Verifies that Windows' USERPROFILE is being shared via WSLENV. Returns true if
+# shared, false otherwise.
+verifyUserProfile() {
+    [[ ! -z "$USERPROFILE" ]]
+}
+
+# Prompts user to allow Windows' USERPROFILE to be added to WSLENV
+shareUserProfile() {
+    printf "%s %s %s\n%s %s\n" \
+        "\$USERPROFILE is not currently being shared from Windows or is set" \
+        "to a blank string. Functions and aliases reliant on \$USERPROFILE" \
+        "may not function as expected or at all until it is properly set." \
+        "Do you wish to add \$USERPROFILE to your \$WSLENV as a user" \
+        "environment variable? [y|n]"
+    while true; do
+        read yn
+        case $yn in
+            [Yy]* ) break;;
+            [Nn]* ) return;;
+            * ) echo "Please answer (y)es or (n)o.";;
+        esac
+    done
+
+    echo ""
+    echo "Prepending \"USERPROFILE/p\" to \$WSLENV..."
+    cmd.exe /c "setx WSLENV USERPROFILE/p:%WSLENV%"
+    printf "\n%s\n%s %s" \
+        "Done." \
+        "Please restart your machine to propogate the Windows environment" \
+        "variables changes."
+}
+
+# Prompt use to share the user profile if it isn't available already
+! verifyUserProfile && shareUserProfile
 
 # Dotfile management
 alias linuxdf='/usr/bin/git --git-dir=$HOME/.linuxdotfiles/ --work-tree=$HOME'
@@ -36,7 +72,7 @@ alias e.exe="explorer.exe"
 
 # Linux aliases
 alias m=micro
-alias cda="cd /mnt/c/Users/ehcla/Sync/assignments/"
+verifyUserProfile && alias cda="cd $USERPROFILE/Sync/assignments/"
 
 # Starship toggle
 toggle-nl() {
