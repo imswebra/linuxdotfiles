@@ -65,6 +65,7 @@ shareUserProfile() {
 
 # Dotfile management
 alias linuxdf='/usr/bin/git --git-dir=$HOME/.linuxdotfiles/ --work-tree=$HOME'
+verifyUserProfile && alias windowsdf='/usr/bin/git --git-dir=$USERPROFILE/.windowsdotfiles/ --work-tree=$USERPROFILE'
 
 # WSL/Windows aliases
 alias ps.exe="powershell.exe -nologo"
