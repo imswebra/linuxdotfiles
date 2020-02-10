@@ -11,3 +11,9 @@ style_failure = "bold red"
 
 [nodejs]
 symbol = " "
+
+[python]
+symbol = " "
+
+[package]
+disabled = true
