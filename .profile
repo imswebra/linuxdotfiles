@@ -73,7 +73,7 @@ alias e.exe="explorer.exe"
 
 # Linux aliases
 alias m=micro
-verifyUserProfile && alias cda="cd $USERPROFILE/Sync/assignments/"
+verifyUserProfile && alias cdw="cd $USERPROFILE/workspace"
 
 # Git aliases
 git() {

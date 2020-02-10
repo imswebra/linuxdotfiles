@@ -130,3 +130,14 @@ eval "$(starship init bash)"
 # Use VcXsrv (X server on Windows)
 export DISPLAY=localhost:0.0
 export LIBGL_ALWAYS_INDIRECT=1
+
+# Use virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+source $HOME/.local/bin/virtualenvwrapper.sh
+
+# Use nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
