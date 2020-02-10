@@ -75,6 +75,15 @@ alias e.exe="explorer.exe"
 alias m=micro
 verifyUserProfile && alias cda="cd $USERPROFILE/Sync/assignments/"
 
+# Git aliases
+git() {
+    if [[ $1 == "foresta" ]]; then
+        command git-foresta --all --style=10 "${@:2}" | less -RSX
+    else
+        command git "$@"
+    fi
+}
+
 # Starship toggle
 toggle-nl() {
     if [[ $(sed -n 3p ~/.config/starship.toml) == "disabled = true" ]]; then
