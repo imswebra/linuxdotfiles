@@ -116,13 +116,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# ==============================================================================
 
-# set PATH to include ~/bin/ if it exists
+# Set PATH to include ~/bin/ if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-
-
 
 # Use Starship
 eval "$(starship init bash)"
