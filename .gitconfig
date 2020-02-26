@@ -3,3 +3,4 @@
 	name = imswebra
 [core]
 	editor = micro
+    excludesfile = /home/eric/.gitignore_global
