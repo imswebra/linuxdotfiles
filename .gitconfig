@@ -3,7 +3,7 @@
 	name = imswebra
 [core]
 	editor = micro
-    excludesfile = /home/eric/.gitignore_global
+    excludesfile = ~/.gitignore_global
 
 [diff]
     tool = vscode
