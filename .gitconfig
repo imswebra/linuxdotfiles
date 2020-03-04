@@ -4,3 +4,15 @@
 [core]
 	editor = micro
     excludesfile = /home/eric/.gitignore_global
+
+[diff]
+    tool = vscode
+[difftool]
+	prompt = false
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
