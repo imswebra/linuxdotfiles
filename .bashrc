@@ -135,3 +135,6 @@ export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 source $HOME/.local/bin/virtualenvwrapper.sh
+
+# Use openJDK 8
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
