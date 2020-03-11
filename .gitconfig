@@ -3,7 +3,6 @@
 	name = Eric Claerhout
 
 [core]
-	editor = micro
     excludesfile = ~/.gitignore_global
 
 [diff]

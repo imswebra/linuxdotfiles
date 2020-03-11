@@ -71,7 +71,9 @@ verifyUserProfile && alias windowsdf='/usr/bin/git --git-dir=$USERPROFILE/.windo
 alias ps.exe="powershell.exe -nologo"
 alias e.exe="explorer.exe"
 
-# Linux aliases
+# Linux variables + aliases
+export VISUAL=micro
+export EDITOR="$VISUAL"
 alias m=micro
 verifyUserProfile && alias cdw="cd $USERPROFILE/workspace"
 
