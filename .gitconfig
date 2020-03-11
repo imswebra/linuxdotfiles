@@ -2,7 +2,6 @@
 	email = imswebra@gmail.com
 	name = imswebra
 [core]
-	editor = micro
     excludesfile = ~/.gitignore_global
 
 [diff]
