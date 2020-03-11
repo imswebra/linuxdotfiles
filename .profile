@@ -75,6 +75,7 @@ alias e.exe="explorer.exe"
 export VISUAL=micro
 export EDITOR="$VISUAL"
 alias m=micro
+alias nnode=/usr/local/bin/n
 verifyUserProfile && alias cdw="cd $USERPROFILE/workspace"
 
 # Git aliases
