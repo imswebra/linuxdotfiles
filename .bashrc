@@ -138,3 +138,14 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 
 # Use openJDK 8
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
+
+# Use Windows Docker daemon
+export DOCKER_HOST=tcp://localhost:2375
+
+# Use Docker image for aws-azure-login
+#  Note that Docker needs /mnt/c to be symlinked to /c (hence the /c in this
+#  alias), and that Docker can only access Windows's filesystem, so the
+#  .aws/credentials file will be in your Windows user profile. In order to use
+#  other linux tools with these credentials like the aws cli, symlink
+#  /mnt/c/Users/<username>/.aws/credentials to ~/.aws/credentials.
+verifyUserProfile && alias aws-azure-login=docker run --rm -it -v /c/Users/eric.claerhout/.aws:/root/.aws sportradar/aws-azure-login --no-sandbox "$@"
