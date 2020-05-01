@@ -1,7 +1,6 @@
 [user]
 	email = eric.claerhout@intelligentimagingsystems.com
 	name = Eric Claerhout
-
 [core]
     excludesfile = ~/.gitignore_global
 
